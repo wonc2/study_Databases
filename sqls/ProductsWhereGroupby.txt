@@ -1,9 +1,3 @@
------ 쿼리 --------
-
-SELECT * FROM Products p1, (select * from (select categoryID, count(*) as num from products group by categoryID) where num >= 10) p2
-where p1.categoryID = p2.categoryID
-
-
 ----- 결과 --------
 
 ProductID	ProductName	SupplierID	p1.categoryID	Unit	Price	p2.categoryID	num
