@@ -1,8 +1,11 @@
+----- 쿼리 --------
+
 select c.customername, o.num from customers c,
 (select customerid, count(*) as num from orders group by customerid)
 o where c.customerid = o.customerid
 
 
+----- 결과 --------
 
 customername	num
 Ana Trujillo Emparedados y helados 	1
