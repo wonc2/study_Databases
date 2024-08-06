@@ -1,13 +1,13 @@
 -- Insert data into CAR_INFORMATIION
-INSERT INTO `CAR_INFORMATION` (`CI_PK`, `CP_NAME`) VALUES
-('CI_01', '현대'),
-('CI_02', '기아'),
-('CI_03', '쉐보레'),
-('CI_04', 'BMW'),
-('CI_05', '벤츠');
+INSERT INTO `COMPANY` (`CP_PK`, `CP_NAME`) VALUES
+('CP_01', '현대'),
+('CP_02', '기아'),
+('CP_03', '쉐보레'),
+('CP_04', 'BMW'),
+('CP_05', '벤츠');
 
 -- Insert data into YEAR
-INSERT INTO `YEAR` (`YEAR_PK`, `YEAR_MODEL`) VALUES
+INSERT INTO `MODEL_YEAR` (`YEAR_PK`, `DATE_YEAR`) VALUES
 ('YEAR_01', '2020'),
 ('YEAR_02', '2018'),
 ('YEAR_03', '2019'),
@@ -15,7 +15,7 @@ INSERT INTO `YEAR` (`YEAR_PK`, `YEAR_MODEL`) VALUES
 ('YEAR_05', '2021');
 
 -- Insert data into CAR_NAME
-INSERT INTO `CAR_NAME` (`CAR_PK`, `CAR_NAME`) VALUES
+INSERT INTO `CAR_NAME` (`CN_PK`, `CAR_NAME`) VALUES
 ('CN_01', '소나타'),
 ('CN_02', '쏘렌토'),
 ('CN_03', '카마로'),
@@ -36,27 +36,27 @@ INSERT INTO `OPTIONS` (`OP_PK`, `OPTION`) VALUES
 ('OP_10', '어댑티브 크루즈컨트롤');
 
 -- Insert data into CAR_INFO_NAME_YEAR
-INSERT INTO `CAR_INFO_NAME_YEAR` (`CI_YEAR_PK`, `CI_FK`, `CAR_FK`, `YEAR_FK`) VALUES
-('CI_YEAR_01', 'CI_01', 'CN_01', 'YEAR_01'),
-('CI_YEAR_02', 'CI_02', 'CN_02', 'YEAR_02'),
-('CI_YEAR_03', 'CI_03', 'CN_03', 'YEAR_03'),
-('CI_YEAR_04', 'CI_04', 'CN_04', 'YEAR_04'),
-('CI_YEAR_05', 'CI_05', 'CN_05', 'YEAR_05'),
-('CI_YEAR_06', 'CI_03', 'CN_03', 'YEAR_05'),
-('CI_YEAR_07', 'CI_01', 'CN_01', 'YEAR_02');
+INSERT INTO `CAR_INFO` (`CI_PK`, `CP_FK`, `CN_FK`, `YEAR_FK`) VALUES
+('CI_01', 'CP_01', 'CN_01', 'YEAR_01'),
+('CI_02', 'CP_02', 'CN_02', 'YEAR_02'),
+('CI_03', 'CP_03', 'CN_03', 'YEAR_03'),
+('CI_04', 'CP_04', 'CN_04', 'YEAR_04'),
+('CI_05', 'CP_05', 'CN_05', 'YEAR_05'),
+('CI_06', 'CP_03', 'CN_03', 'YEAR_05'),
+('CI_07', 'CP_01', 'CN_01', 'YEAR_02');
 
 -- Insert data into CAR_INFO_OPTIONS
-INSERT INTO `CAR_INFO_OPTIONS` (`CI_OPTION_PK`, `OP_FK`, `CI_YEAR_FK`) VALUES
-('CI_OP_01', 'OP_01', 'CI_YEAR_01'),
-('CI_OP_02', 'OP_02', 'CI_YEAR_01'),
-('CI_OP_03', 'OP_03', 'CI_YEAR_02'),
-('CI_OP_04', 'OP_04', 'CI_YEAR_02'),
-('CI_OP_05', 'OP_05', 'CI_YEAR_03'),
-('CI_OP_06', 'OP_06', 'CI_YEAR_03'),
-('CI_OP_07', 'OP_07', 'CI_YEAR_04'),
-('CI_OP_08', 'OP_08', 'CI_YEAR_04'),
-('CI_OP_09', 'OP_09', 'CI_YEAR_05'),
-('CI_OP_10', 'OP_10', 'CI_YEAR_05'),
-('CI_OP_11', 'OP_06', 'CI_YEAR_06'),
-('CI_OP_12', 'OP_02', 'CI_YEAR_07'),
-('CI_OP_13', 'OP_07', 'CI_YEAR_07');
+INSERT INTO `CAR_INFO_OPTIONS` (`CI_OP_PK`, `OP_FK`, `CI_FK`) VALUES
+('CI_OP_01', 'OP_01', 'CI_01'),
+('CI_OP_02', 'OP_02', 'CI_01'),
+('CI_OP_03', 'OP_03', 'CI_02'),
+('CI_OP_04', 'OP_04', 'CI_02'),
+('CI_OP_05', 'OP_05', 'CI_03'),
+('CI_OP_06', 'OP_06', 'CI_03'),
+('CI_OP_07', 'OP_07', 'CI_04'),
+('CI_OP_08', 'OP_08', 'CI_04'),
+('CI_OP_09', 'OP_09', 'CI_05'),
+('CI_OP_10', 'OP_10', 'CI_05'),
+('CI_OP_11', 'OP_06', 'CI_06'),
+('CI_OP_12', 'OP_02', 'CI_07'),
+('CI_OP_13', 'OP_07', 'CI_07');
