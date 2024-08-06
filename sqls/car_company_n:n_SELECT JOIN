@@ -1,4 +1,4 @@
-select CP_NAME as '회사이름', CAR_NAME as '자동차이름', YEAR_MODEL as '연식', COUNT(`OPTION`) from CAR_INFO_NAME_YEAR ci 
+select CP_NAME as '회사이름', CAR_NAME as '자동차이름', YEAR_MODEL as '연식', COUNT(`OPTION`) as '옵션 갯수' from CAR_INFO_NAME_YEAR ci 
 INNER JOIN CAR_INFO_OPTIONS op ON ci.CI_YEAR_PK = op.CI_YEAR_FK
 INNER JOIN CAR_INFORMATION carinfo ON ci.CI_FK = carinfo.CI_PK
 INNER JOIN CAR_NAME carname ON ci.CAR_FK = carname.CAR_PK
