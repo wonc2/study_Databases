@@ -1,0 +1,65 @@
+-- Insert data into MEMBER_INFO
+INSERT INTO MEMBER_INFO (ID_PK, Name, Age, Gender, Mobile, Email) VALUES
+('ID_01', '홍길동', '30', '남', '010-1234-5678', 'hong@example.com'),
+('ID_02', '김영희', '25', '여', '010-9876-5432', 'kim@example.com'),
+('ID_03', '이철수', '35', '남', '010-2468-1357', 'lee@example.com'),
+('ID_04', '박민준', '28', '남', '010-8642-9137', 'park@example.com'),
+('ID_05', '임지영', '32', '여', '010-5793-6241', 'lim@example.com');
+
+-- Insert data into HOBBY
+INSERT INTO HOBBY (HB_PK, CATEGORY) VALUES
+('HB_01', '등산'),
+('HB_02', '요리'),
+('HB_03', '음악감상'),
+('HB_04', '수영'),
+('HB_05', '영화감상'),
+('HB_06', '요가'),
+('HB_07', '자전거'),
+('HB_08', '그림 그리기'),
+('HB_09', '독서'),
+('HB_10', '공원 산책');
+
+-- Insert data into ID_HOBBY
+INSERT INTO ID_HOBBY (ID_HB_PK, ID_FK, HB_FK) VALUES
+('1', 'ID_01', 'HB_01'),
+('2', 'ID_01', 'HB_02'),
+('3', 'ID_02', 'HB_03'),
+('4', 'ID_02', 'HB_04'),
+('5', 'ID_03', 'HB_05'),
+('6', 'ID_03', 'HB_07'),
+('7', 'ID_04', 'HB_06'),
+('8', 'ID_04', 'HB_08'),
+('9', 'ID_05', 'HB_09'),
+('10', 'ID_05', 'HB_10');
+
+-- Insert data into STATE
+INSERT INTO STATE (S_PK, State_Name) VALUES
+('S_01', '서울특별시'),
+('S_02', '경기도 수원시'),
+('S_03', '인천광역시'),
+('S_04', '대전광역시'),
+('S_05', '경상북도 포항시');
+
+-- Insert data into CITY
+INSERT INTO CITY (C_PK, City_Name) VALUES
+('C_01', NULL),
+('C_02', '수원시'),
+('C_03', '포항시');
+
+-- Insert data into TOWN
+INSERT INTO TOWN (T_PK, Town_Name) VALUES
+('T_01', NULL),
+('T_02', '강남구'),
+('T_03', '부평구'),
+('T_04', '서구'),
+('T_05', '북구');
+
+-- Insert data into ADDRESS
+INSERT INTO ADDRESS (AD_PK, ID_FK, S_FK, C_FK, T_FK) VALUES
+('AD_01', 'ID_01', 'S_01', 'C_01', 'T_02'),
+('AD_02', 'ID_01', 'S_02', 'C_02', 'T_01'),
+('AD_03', 'ID_02', 'S_02', 'C_02', 'T_01'),
+('AD_04', 'ID_03', 'S_03', 'C_01', 'T_04'),
+('AD_05', 'ID_04', 'S_04', 'C_01', 'T_04'),
+('AD_06', 'ID_05', 'S_05', 'C_03', 'T_05'),
+('AD_07', 'ID_05', 'S_04', 'C_01', 'T_04');
