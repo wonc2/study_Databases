@@ -1,11 +1,11 @@
--- 이름 취미갯수 , 나이, 성별, 배송주소(state)
+-- 이름 취미갯수 , 나이, 성별, 배송주소
 
-select name, COUNT(category) as `취미 갯수`, age, gender, State_Name as `주소`
+select name, COUNT(category) as `취미 갯수`, age, gender, CONCAT(State_Name, " ", Town_Name) as `주소`
 	from MEMBER_INFO MEM
 	INNER JOIN ID_HOBBY IB ON IB.ID_FK = MEM.ID_PK
 	INNER JOIN HOBBY HOB ON IB.HB_FK = HOB.HB_PK
     INNER JOIN ADDRESS AD ON AD.ID_FK = MEM.ID_PK
     INNER JOIN STATE S ON AD.S_FK = S.S_PK
     INNER JOIN TOWN T ON AD.T_FK = T.T_PK
-	GROUP BY MEM.name, MEM.age, MEM.gender, S.State_Name
+	GROUP BY MEM.name, MEM.age, MEM.gender, S.State_Name, T.Town_Name
 ;
