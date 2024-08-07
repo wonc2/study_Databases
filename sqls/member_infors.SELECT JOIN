@@ -6,7 +6,6 @@ select name, COUNT(category) as `취미 갯수`, age, gender, State_Name as `주
 	INNER JOIN HOBBY HOB ON IB.HB_FK = HOB.HB_PK
     INNER JOIN ADDRESS AD ON AD.ID_FK = MEM.ID_PK
     INNER JOIN STATE S ON AD.S_FK = S.S_PK
-    INNER JOIN CITY C ON AD.C_FK = C.C_PK
     INNER JOIN TOWN T ON AD.T_FK = T.T_PK
 	GROUP BY MEM.name, MEM.age, MEM.gender, S.State_Name
 ;
